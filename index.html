@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POPE Market | Commercio ortofrutticolo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>POPE Market</h1>
+        <p class="subtitle">Marketplace ortofrutticolo per produttori e grossisti</p>
+      </div>
+      <div id="userChip" class="user-chip hidden"></div>
+    </header>
+
+    <main class="container">
+      <section id="authSection" class="card">
+        <h2>Accedi o registrati</h2>
+        <div class="grid-two">
+          <form id="registerForm" class="panel">
+            <h3>Registrazione</h3>
+            <label>Nome completo
+              <input type="text" name="name" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Password
+              <input type="password" name="password" minlength="6" required />
+            </label>
+            <label>Ruolo
+              <select name="role" required>
+                <option value="producer">Produttore</option>
+                <option value="wholesaler">Grossista</option>
+              </select>
+            </label>
+            <button type="submit">Crea account</button>
+          </form>
+
+          <form id="loginForm" class="panel">
+            <h3>Login</h3>
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Password
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit">Entra</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="dashboardSection" class="hidden">
+        <div class="card">
+          <div class="dashboard-head">
+            <h2 id="dashboardTitle">Pannello personale</h2>
+            <button id="logoutBtn" class="secondary">Logout</button>
+          </div>
+          <p class="muted">Gestisci pubblicazioni giornaliere, prenotazioni e storico ordini.</p>
+        </div>
+
+        <section id="producerPanel" class="card hidden">
+          <h3>Pubblica prodotto del giorno</h3>
+          <form id="productForm" class="form-grid">
+            <label>Prodotto
+              <input type="text" name="name" placeholder="Es. Pomodori ciliegino" required />
+            </label>
+            <label>Quantità (colli)
+              <input type="number" name="quantity" min="1" required />
+            </label>
+            <label>Prezzo (€ per collo)
+              <input type="number" name="price" min="0.01" step="0.01" required />
+            </label>
+            <label>Data raccolta
+              <input type="date" name="harvestDate" required />
+            </label>
+            <label>URL foto
+              <input type="url" name="photo" placeholder="https://..." required />
+            </label>
+            <label>Azienda
+              <input type="text" name="company" required />
+            </label>
+            <label>Zona di produzione
+              <input type="text" name="area" required />
+            </label>
+            <label>Trattamenti effettuati
+              <input type="text" name="treatments" required />
+            </label>
+            <label>Analisi residui
+              <input type="text" name="residueAnalysis" required />
+            </label>
+            <button type="submit">Pubblica disponibilità</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h3>Catalogo prodotti</h3>
+          <div id="productList" class="list"></div>
+        </section>
+
+        <section class="card">
+          <h3>Storico ordini</h3>
+          <div id="orderList" class="list"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="productTemplate">
+      <article class="product-item">
+        <img class="product-photo" alt="Foto prodotto" />
+        <div class="product-content">
+          <div class="product-head">
+            <h4 class="product-name"></h4>
+            <span class="badge price-badge"></span>
+          </div>
+          <p class="meta"></p>
+          <p class="meta"></p>
+          <p class="meta"></p>
+          <p class="meta"></p>
+          <p class="meta"></p>
+          <p class="meta"></p>
+          <div class="actions"></div>
+        </div>
+      </article>
+    </template>
+
+    <template id="orderTemplate">
+      <article class="order-item">
+        <div>
+          <h4 class="order-title"></h4>
+          <p class="meta order-meta"></p>
+        </div>
+        <span class="badge status-badge"></span>
+      </article>
+    </template>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
