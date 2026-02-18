@@ -31,26 +31,90 @@
   <h2 style="text-align:center; margin-top:40px;">DISPONIBILITÀ GIORNALIERA</h2>
   <p style="text-align:center; color:#666;">
     Consulta la merce disponibile oggi direttamente dal produttore
-  </p><div class="catalog-grid">
-  <div class="product-card">
-    <h3>Peperone Rosso</h3>
-    <p>Calibro medio</p>
-    <p><strong>Disponibilità:</strong> 120 colli</p>
-    <p class="price">€ 2.20 / kg</p>
+  </p>
+  <div class="product-card" data-sku="pep-rosso">
+  <div class="product-top">
+    <div>
+      <h3>Peperone Rosso</h3>
+      <p class="muted">Calibro medio</p>
+      <p class="price">€ 2.20 / kg</p>
+    </div>
+    <img class="product-photo" id="img-pep-rosso" src="" alt="Foto Peperone Rosso">
   </div>
 
-  <div class="product-card">
-    <h3>Peperone Giallo</h3>
-    <p>Calibro medio</p>
-    <p><strong>Disponibilità:</strong> 95 colli</p>
-    <p class="price">€ 2.30 / kg</p>
+  <div class="product-actions">
+    <label>Colli disponibili</label>
+    <div class="qty">
+      <button type="button" class="qty-btn" onclick="changeQty('pep-rosso',-1)">-</button>
+      <input id="qty-pep-rosso" type="number" min="0" value="120">
+      <button type="button" class="qty-btn" onclick="changeQty('pep-rosso',+1)">+</button>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="sel-pep-rosso">
+      Seleziona prodotto
+    </label>
+
+    <label>Foto prodotto (da telefono / fotocamera)</label>
+    <input type="file" accept="image/*" capture="environment" onchange="savePhoto(event,'pep-rosso')">
+  </div>
+</div>
+
+
+<div class="product-card" data-sku="pep-giallo">
+  <div class="product-top">
+    <div>
+      <h3>Peperone Giallo</h3>
+      <p class="muted">Calibro medio</p>
+      <p class="price">€ 2.30 / kg</p>
+    </div>
+    <img class="product-photo" id="img-pep-giallo" src="" alt="Foto Peperone Giallo">
   </div>
 
-  <div class="product-card">
-    <h3>Ciliegino Premium</h3>
-    <p>Grado Brix 7+</p>
-    <p><strong>Disponibilità:</strong> 80 colli</p>
-    <p class="price">€ 1.80 / kg</p>
+  <div class="product-actions">
+    <label>Colli disponibili</label>
+    <div class="qty">
+      <button type="button" class="qty-btn" onclick="changeQty('pep-giallo',-1)">-</button>
+      <input id="qty-pep-giallo" type="number" min="0" value="95">
+      <button type="button" class="qty-btn" onclick="changeQty('pep-giallo',+1)">+</button>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="sel-pep-giallo">
+      Seleziona prodotto
+    </label>
+
+    <label>Foto prodotto (da telefono / fotocamera)</label>
+    <input type="file" accept="image/*" capture="environment" onchange="savePhoto(event,'pep-giallo')">
+  </div>
+</div>
+
+
+<div class="product-card" data-sku="ciliegino">
+  <div class="product-top">
+    <div>
+      <h3>Ciliegino Premium</h3>
+      <p class="muted">Grado Brix 7+</p>
+      <p class="price">€ 2.90 / kg</p>
+    </div>
+    <img class="product-photo" id="img-ciliegino" src="" alt="Foto Ciliegino Premium">
+  </div>
+
+  <div class="product-actions">
+    <label>Colli disponibili</label>
+    <div class="qty">
+      <button type="button" class="qty-btn" onclick="changeQty('ciliegino',-1)">-</button>
+      <input id="qty-ciliegino" type="number" min="0" value="80">
+      <button type="button" class="qty-btn" onclick="changeQty('ciliegino',+1)">+</button>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="sel-ciliegino">
+      Seleziona prodotto
+    </label>
+
+    <label>Foto prodotto (da telefono / fotocamera)</label>
+    <input type="file" accept="image/*" capture="environment" onchange="savePhoto(event,'ciliegino')">
   </div>
 </div>
 
